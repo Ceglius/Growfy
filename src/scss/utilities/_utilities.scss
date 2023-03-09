@@ -6,12 +6,13 @@
 
 // Container
 .container {
-  max-width: $containerWidth + px ;
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
   margin: 0 auto;
-  
+  padding: 0 $containerSidePadding + px;
 
-  @media (max-width: calc($addPadding ) ) {
-    padding: 0 $containerSidePadding + px;
+  @media (max-width: $breakpoint1450) {
+     
   }
 
   @media (max-width: $breakpoint992) {
@@ -23,6 +24,6 @@
   }
 
   @media (max-width: $breakpoint480) {
-    padding: 0 calc($containerSidePadding / 2) + px;
+     
   }
 }
