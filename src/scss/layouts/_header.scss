@@ -3,89 +3,50 @@
 /*
    ==== Header ====
 */
-
-
 .header {
-   background-color: red;
 
-   &.fixed {
-       position: fixed;
-       left: 0;
-       top: 0;
-       width: 100%;
-       z-index: 2;
-   }
-}
-.navbar {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 20px 0;
+    // .header__logo
+    &__logo {
+    }
+
+    // .header__menu
+    &__menu {
+    }
+
+    // .header__cart
+    &__cart {
+    }
+
+    // .header__button
+    &__button {
+    }
 }
 
-/*
-   ==== Menu ====
-*/
 .menu {
-   display: flex;
-   gap: 30px;
 
-   // .menu__item
-   &__item {
-       display: flex;
-       position: relative;
-   }
+    // .menu__list
+    &__list {
+    }
 
-   // .menu__item-link
-   &__item-link {
-       color: white;
-       display: flex;
-       position: relative;
-       transition: 0.3s color;
-       &:after {
-           position: absolute;
-           content: '';
-           left: 0;
-           bottom: -3px;
-           background: #131418;
-           height: 1px;
-           width: 100%;
-           transform: scale(0);
-           transition: 0.5s transform;
-       }
-       &:hover {
-           // color: #131418;
-           &:after {
-               transform: scale(1);
-           }
-       }
-   }
+    // .menu__item
+    &__item {
+    }
 
-   // Mobile menu styles
-   @media screen and (max-width: $burgerBreakpoint) {
-       position: fixed;
-       background: red;;
-       left: 0;
-       top: 0;
-       height: 100vh;
-       width: 100vw;
-       display: none;
-
-       &.active {
-           display: flex;
-           left: 0;
-           top: 0;
-           height: 100vh;
-           width: 100vw;
-           flex-direction: column;
-           pointer-events: all;
-           justify-content: center;
-           align-items: center;
-           z-index: 2;
-           animation: fade 0.1s linear;
-       }
-   }
+    // .menu__link
+    &__link {
+    }
 }
+.cart-header {
+
+    // .cart-header__text
+    &__text {
+    }
+
+    // .cart-header__quantity
+    &__quantity {
+    }
+}
+
 
 /*
    ==== Burger ====

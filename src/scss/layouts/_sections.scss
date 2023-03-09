@@ -1,15 +1,23 @@
+@use '../abstract/vars' as *;
+@use '../abstract/mixins' as *;
+
 /*
    ==== Sections ====
 */
 
 .section {
-
+  
   // .section__title
   &__title {
-
+    color: var(--white-co);
+    font-weight: var(--fw-medium);
+    font-size: rem(51.2);
+    line-height: rem(61);
   }
+
   // .section__subtext
   &__subtext {
-
+    font-size: rem(18);
+    line-height: rem(27);
   }
 }
