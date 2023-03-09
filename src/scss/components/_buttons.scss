@@ -16,6 +16,10 @@
   border-radius: rem(50);
   background-color: var(--elemnt-bg-co);
   transition: all .3s;
+
+  @media (max-width: $breakpoint992){
+    padding: rem(14) rem(20);
+  }
   &--cta {
     background: var(--cta-btn-co);
 

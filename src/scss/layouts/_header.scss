@@ -5,15 +5,36 @@
    ==== Header ====
 */
 .header {
-  
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--black-co);
   &__container {
     display: flex;
     align-items: center;
     column-gap: rem(35);
     min-height: rem(116);
+
+    @media (max-width: $breakpoint992) {
+      gap: rem(25);
+    }
+
+    @media (max-width: $breakpoint768) {
+      min-height: rem(70);
+      gap: rem(15);
+    }
+    @media (max-width: $breakpoint560) {
+      gap: rem(10);
+      justify-content: flex-start;
+    }
   }
   // .header__logo
   &__logo {
+    @media (max-width: $breakpoint560) {
+      width: rem(43);
+      overflow: hidden;
+    }
   }
 
   // .header__menu
@@ -27,15 +48,69 @@
 
   // .header__button
   &__button {
+    flex: 0 0 auto;
+  }
+
+  &__button,
+  &__cart,
+  &__logo {
+    position: relative;
+    z-index: 5;
   }
 }
 
 .menu {
+  // .menu__body
+  &__body {
+    @media (max-width: $breakpoint768) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black-co);
+      padding: rem(100) rem(15) rem(30) rem(15);
+      overflow: auto;
+      transition: left 0.3s ease;
+
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &.active {
+        left: 0;
+      }
+      &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: rem(70);
+        background-color: var(--black-co);
+      }
+    }
+  }
   // .menu__list
   &__list {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
     column-gap: rem(35);
+    row-gap: rem(3);
+
+    @media (max-width: $breakpoint992) {
+      column-gap: rem(25);
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: rem(10);
+    }
   }
 
   // .menu__item
@@ -46,9 +121,15 @@
   &__link {
     line-height: 1.62;
     color: var(--white-co);
+    display: block;
+
+    @media (max-width: $breakpoint768) {
+      text-align: center;
+      font-size: rem(32);
+    }
 
     &:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
   }
 }
@@ -60,21 +141,39 @@
 
   &:hover .cart-header__text {
     text-decoration: underline;
-   
   }
   // .cart-header__text
   &__text {
     font-size: rem(18);
     line-height: 1.55;
+    @media (max-width: $breakpoint560) {
+      display: none;
+    }
   }
   // .cart-header__quantity
   &__quantity {
-    @include square(30);
+    padding: rem(5) rem(10);
     background: rgba(129, 129, 139, 0.3);
     border-radius: rem(30);
     font-weight: var(--fw-medium);
     font-size: rem(14);
-    @include flex-center();
+
+    @media (max-width: $breakpoint560) {
+      position: absolute;
+      right: rem(-8);
+      top: rem(-10);
+    }
+  }
+
+  &__icon {
+    display: none;
+    @media (max-width: $breakpoint560) {
+      display: block;
+    }
+    svg {
+      height: 30px;
+      width: 40px;
+    }
   }
 }
 

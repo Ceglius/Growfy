@@ -1,6 +1,6 @@
 function burgerMenu() {
   const burger = document.querySelector(".burger");
-  const menu = document.querySelector(".menu");
+  const menu = document.querySelector(".menu__body");
   const body = document.querySelector("body");
 
   burger.addEventListener("click", () => {
