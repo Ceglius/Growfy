@@ -9,7 +9,7 @@ html {
 body {
   font-family: var(--ff-main);
   font-size: var(--fs-body);
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-light);
 
   &.locked {
     overflow: hidden;
