@@ -6,5 +6,23 @@
 */
 
 .button {
+  color: var(--white-co);
+  font-size: rem(14);
+  font-weight: var(--fw-medium);
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.43;
+  padding: rem(16) rem(30);
+  border-radius: rem(50);
+  background-color: var(--elemnt-bg-co);
+  transition: all .3s;
+  &--cta {
+    background: var(--cta-btn-co);
+
+    &:hover {
+      background-color: #70a1d4;
+    }
+  }
+
 
 }
